@@ -11,7 +11,7 @@ export class Player {
     const dx = this.x - this.mouse.x;
     const dy = this.y - this.mouse.y;
   
-    // dividing by 30 to control the speed
+    // dividing by 30 to control the speed, smaller the value, faster it is
     if (this.x != this.mouse.x)
       this.x -= dx/30;
 
