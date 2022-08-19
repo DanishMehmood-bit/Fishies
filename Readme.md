@@ -1,2 +1,7 @@
 # Bugs
-- when in inspect everything works fine but when console is closed, the mouse click is weird.
+
+# To Implement
+- Bubbles should only spawn inside of canvas.
+
+# Optional
+- WASD to move the player.

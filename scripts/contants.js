@@ -1,6 +1,6 @@
 // Canvas
-export const CANVAS_WIDTH = 800;
-export const CANVAS_HEIGHT = 500;
+export const CANVAS_WIDTH = window.innerWidth;
+export const CANVAS_HEIGHT = window.innerHeight;
 
 // Player
 export const PLAYER_RADIUS = 50;

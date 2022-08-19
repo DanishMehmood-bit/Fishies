@@ -6,12 +6,13 @@ export class Bubble {
     this.canvasPos = canvas.getCanvas().getBoundingClientRect();
     this.canvasContext = canvas.getContext();
     this.x = Utils.generateRandom(this.canvasPos.left, this.canvasPos.right);
-    this.y = Constants.CANVAS_HEIGHT;
+    // Adding radius to make sure they are spawn offscrean for smooth trasition
+    this.y = Constants.CANVAS_HEIGHT + Constants.BUBBLE_RADIUS;
+    this.speed = Utils.generateRandom(1, 10);
   }
   
   update = () => {
-    if (this.y !== this.canvasPos.top)
-      this.y--;
+    this.y -= this.speed;
   }
 
   draw = () => {
@@ -20,6 +21,15 @@ export class Bubble {
     this.canvasContext.arc(this.x, this.y, Constants.BUBBLE_RADIUS, 0, Math.PI * 2); 
     this.canvasContext.fill();
     this.canvasContext.closePath();
-    this.canvasContext.fillRect(this.x, this.y, this.radius, 10);
+    this.canvasContext.fillRect(this.x, this.y, Constants.BUBBLE_RADIUS, 10);
+  }
+
+  isAtTop = () => {
+    // subtracting 100 to stop abrupt disappear, we only want bubbles to disappear when they are offscreen
+    return this.y <= this.canvasPos.top - 100;
+  }
+
+  clearBubble = () => {
+    this.canvasContext.clearRect(this.x, this.y, Constants.BUBBLE_RADIUS, 10);
   }
 }
