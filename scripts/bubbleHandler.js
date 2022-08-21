@@ -1,6 +1,7 @@
 import { Bubble } from "./Bubble.js";
+import { Utils } from "./Utils.js";
 
-export const bubbleHandler = (gameFrame, bubblesGenerated, canvas) => {
+export const bubbleHandler = (gameFrame, bubblesGenerated, canvas, player, score) => {
   let bubblesToRemove = [];
 
   if (gameFrame % 50 === 0)
@@ -10,8 +11,13 @@ export const bubbleHandler = (gameFrame, bubblesGenerated, canvas) => {
     bubble.update();
     bubble.draw();
 
-    if (bubble.isAtTop())
+    const isPlayerColliding = Utils.isColliding(bubble, player);
+
+    if (bubble.isAtTop() || isPlayerColliding)
       bubblesToRemove.push(index);
+
+    if (isPlayerColliding)
+      score.increment();
   });
 
   // To remove the bubbles flashing, we need to remove them separately from the updating loop 

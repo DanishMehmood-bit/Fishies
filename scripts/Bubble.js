@@ -9,6 +9,7 @@ export class Bubble {
     // Adding radius to make sure they are spawn offscrean for smooth trasition
     this.y = Constants.CANVAS_HEIGHT + Constants.BUBBLE_RADIUS;
     this.speed = Utils.generateRandom(1, 10);
+    this.radius = Constants.BUBBLE_RADIUS;
   }
   
   update = () => {
