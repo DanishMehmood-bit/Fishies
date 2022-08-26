@@ -18,7 +18,7 @@ export class Utils {
 
     // Github pages doesn't have a server to save the images so we need github link where images are store to show them
     if (window.location.hostname.includes("github.io"))
-      src = `https://github.com/DanishMehmood-bit/Fishies/blob/main/${src.substring(3)}`; // substring starts at 3 to remove ../
+      src = `https://raw.githubusercontent.com/DanishMehmood-bit/Fishies/main/assets/${src.substring(3)}`; // substring starts at 3 to remove ../
 
     image.src = src;
     return image;
