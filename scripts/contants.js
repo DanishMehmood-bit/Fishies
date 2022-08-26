@@ -1,9 +1,16 @@
+import { Utils } from "./Utils.js";
+
 // Canvas
 export const CANVAS_WIDTH = window.innerWidth;
 export const CANVAS_HEIGHT = window.innerHeight;
 
 // Player
-export const PLAYER_RADIUS = 50;
+export const PLAYER = {
+  image: Utils.buildImage("../assets/fish.png"),
+  width: 32,
+  height: 32,
+  radius: 32
+}
 
 // Bubbles
 export const BUBBLE_RADIUS = 50;

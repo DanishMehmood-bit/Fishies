@@ -9,7 +9,7 @@ var gameFrame = 0;
 
 const canvas = new Canvas();
 const event = new Events(canvas, Constants.MOUSE);
-const player = new Player(Constants.CANVAS_WIDTH, Constants.CANVAS_HEIGHT, Constants.PLAYER_RADIUS, Constants.MOUSE, canvas);
+const player = new Player(Constants.CANVAS_WIDTH, Constants.CANVAS_HEIGHT, Constants.PLAYER.radius, Constants.MOUSE, canvas);
 const score = new Score(canvas);
 const gameLoop = new GameLoop(player, canvas, gameFrame, score);
 

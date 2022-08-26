@@ -12,4 +12,10 @@ export class Utils {
 
     return distance < (obj1.radius + obj2.radius);
   }
+
+  static buildImage = (src) => {
+    const image = new Image();
+    image.src = src;
+    return image;
+  }
 }
