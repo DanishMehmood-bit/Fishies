@@ -1,4 +1,4 @@
-import { PLAYER, IS_DEBUGGING_MODE } from "./contants.js";
+import { PLAYER, DEBUGGING_MODE } from "./contants.js";
 
 export class Player {
   constructor(width, height, radius, mouse, canvas) {
@@ -35,7 +35,7 @@ export class Player {
     }
 
     // drawing circle (useful for debugging)
-    if (IS_DEBUGGING_MODE) {
+    if (DEBUGGING_MODE.fishCollitionDetector) {
       this.canvasContext.fillStyle = "red";
       this.canvasContext.beginPath();
       this.canvasContext.arc(this.x, this.y, this.radius, 0, Math.PI * 2);

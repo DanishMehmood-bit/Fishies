@@ -1,7 +1,10 @@
 import { Utils } from "./Utils.js";
 
 // Debugging
-export const IS_DEBUGGING_MODE = false;
+export const DEBUGGING_MODE = {
+  fishCollitionDetector: false,
+  bubbleCollitionDetector: false
+}
 
 // Canvas
 export const CANVAS_WIDTH = window.innerWidth;
@@ -16,7 +19,12 @@ export const PLAYER = {
 }
 
 // Bubbles
-export const BUBBLE_RADIUS = 50;
+export const BUBBLE = {
+  image: Utils.buildImage("../assets/bubble.png"),
+  width: 64,
+  height: 64,
+  radius: 32
+}
 
 // Mouse
 export const MOUSE = {
