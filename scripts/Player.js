@@ -1,4 +1,4 @@
-import { PLAYER } from "./contants.js";
+import { PLAYER, IS_DEBUGGING_MODE } from "./contants.js";
 
 export class Player {
   constructor(width, height, radius, mouse, canvas) {
@@ -35,12 +35,14 @@ export class Player {
     }
 
     // drawing circle (useful for debugging)
-    // this.canvasContext.fillStyle = "red";
-    // this.canvasContext.beginPath();
-    // this.canvasContext.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    // this.canvasContext.fill();
-    // this.canvasContext.closePath();
-    // this.canvasContext.fillRect(this.x, this.y, this.radius, 10);
+    if (IS_DEBUGGING_MODE) {
+      this.canvasContext.fillStyle = "red";
+      this.canvasContext.beginPath();
+      this.canvasContext.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      this.canvasContext.fill();
+      this.canvasContext.closePath();
+      this.canvasContext.fillRect(this.x, this.y, this.radius, 10);
+    }
 
     // Rotating the player towards mouse
     this.canvasContext.save();

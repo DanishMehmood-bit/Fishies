@@ -1,5 +1,8 @@
 import { Utils } from "./Utils.js";
 
+// Debugging
+export const IS_DEBUGGING_MODE = false;
+
 // Canvas
 export const CANVAS_WIDTH = window.innerWidth;
 export const CANVAS_HEIGHT = window.innerHeight;
