@@ -1,12 +1,12 @@
 export class Events {
   constructor(canvas, mouse) {
-    this.canvas = canvas.getCanvas();
+    this.canvas = canvas;
     this.mouse = mouse;
-    this.canvasPosition = this.canvas.getBoundingClientRect();
+    this.canvasPosition = this.canvas.getCanvas().getBoundingClientRect();
   }
 
   initializeEvents = () => {
-    this.canvas.addEventListener("mousedown", (event) => {
+    this.canvas.getCanvas().addEventListener("mousedown", (event) => {
       this.mouse.click = true;
 
       // To make the 0,0 on top left of rectangle
@@ -14,8 +14,14 @@ export class Events {
       this.mouse.y = event.y - this.canvasPosition.top;
     });
 
-    this.canvas.addEventListener("mouseup", (event) => {
+    this.canvas.getCanvas().addEventListener("mouseup", () => {
       this.mouse.click = false;
+    });
+
+    // on resize we update the canvas position correctly for mouse to work
+    window.addEventListener("resize", () => {
+      this.canvas.updateDimentions(window.innerWidth, window.innerHeight);
+      this.canvas.resetFont();
     });
   }
 }
