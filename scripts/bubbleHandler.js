@@ -3,6 +3,9 @@ import { Utils } from "./Utils.js";
 
 export const bubbleHandler = (gameFrame, bubblesGenerated, canvas, player, score) => {
   const updateDrawBubble = (bubble) => {
+    if (!bubble)
+      return;
+      
     bubble.update();
     bubble.draw();
   }
