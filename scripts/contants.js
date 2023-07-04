@@ -12,7 +12,8 @@ export const CANVAS_HEIGHT = window.innerHeight;
 
 // Player
 export const PLAYER = {
-  image: Utils.buildImage("../assets/fish.png"),
+  leftImage: Utils.buildImage("../assets/fish.png"),
+  rightImage: Utils.buildImage("../assets/fish-right.png"),
   width: 32,
   height: 32,
   radius: 32

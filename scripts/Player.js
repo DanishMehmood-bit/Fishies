@@ -51,10 +51,10 @@ export class Player {
 
     // Normal Image for left
     (this.x >= this.mouse.x) ?
-      this.canvasContext.drawImage(PLAYER.image, 0, 0, PLAYER.width, PLAYER.height, -PLAYER.width, -PLAYER.height, PLAYER.width * 2, PLAYER.height * 2)
+      this.canvasContext.drawImage(PLAYER.leftImage, 0, 0, PLAYER.width, PLAYER.height, -PLAYER.width, -PLAYER.height, PLAYER.width * 2, PLAYER.height * 2)
     :
     // Flipped image for right
-    this.canvasContext.drawImage(PLAYER.image, 0, 0, PLAYER.width, PLAYER.height, -PLAYER.width, -PLAYER.height, PLAYER.width * 2, PLAYER.height * 2)
+    this.canvasContext.drawImage(PLAYER.rightImage, 0, 0, PLAYER.width, PLAYER.height, -PLAYER.width, -PLAYER.height, PLAYER.width * 2, PLAYER.height * 2)
   
     this.canvasContext.restore();
   }
