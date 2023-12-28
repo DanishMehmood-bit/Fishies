@@ -1,4 +1,5 @@
-import { bubbleHandler } from "./bubbleHandler.js";
+import { enemySpawner } from "./EnemySpawner.js";
+import { bubbleHandler } from "./BubbleHandler.js";
 import * as Constants from "./contants.js";
 
 export class GameLoop {
@@ -7,6 +8,7 @@ export class GameLoop {
     this.canvas = canvas;
     this.gameFrame = gameFrame;
     this.bubblesGenerated = [];
+    this.enemiesSpawned = [];
     this.score = score;
   }
 
@@ -16,6 +18,9 @@ export class GameLoop {
 
     this.player.update();
     this.player.draw();
+
+    // Generate Enemies
+    enemySpawner(this.enemiesSpawned, this.canvas);
 
     // Generate Bubbles
     bubbleHandler(this.gameFrame, this.bubblesGenerated, this.canvas, this.player, this.score);

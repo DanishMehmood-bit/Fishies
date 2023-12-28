@@ -19,6 +19,13 @@ export const PLAYER = {
   radius: 32
 }
 
+// Enemy
+export const ENEMY = {
+  width: 32,
+  height: 32,
+  radius: 32
+}
+
 // Bubbles
 export const BUBBLE = {
   image: Utils.buildImage("../assets/bubble.png"),
