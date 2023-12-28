@@ -3,6 +3,8 @@ import { bubbleHandler } from "./BubbleHandler.js";
 import * as Constants from "./contants.js";
 
 export class GameLoop {
+  static gameOver = false;
+
   constructor(player, canvas, gameFrame, score) {
     this.player = player;
     this.canvas = canvas;
@@ -20,7 +22,7 @@ export class GameLoop {
     this.player.draw();
 
     // Generate Enemies
-    enemySpawner(this.enemiesSpawned, this.canvas);
+    enemySpawner(this.enemiesSpawned, this.canvas, this.player);
 
     // Generate Bubbles
     bubbleHandler(this.gameFrame, this.bubblesGenerated, this.canvas, this.player, this.score);
@@ -31,7 +33,9 @@ export class GameLoop {
     // Updating the gameFrame
     this.gameFrame++;
 
-    // Method responsible for looping / animating
-    requestAnimationFrame(this.initiate);
+    if (!GameLoop.gameOver) {
+      // Method responsible for looping / animating
+      requestAnimationFrame(this.initiate);
+    }
   }
 }
