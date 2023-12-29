@@ -3,7 +3,8 @@ import { Utils } from "./Utils.js";
 // Debugging
 export const DEBUGGING_MODE = {
   fishCollitionDetector: false,
-  bubbleCollitionDetector: false
+  bubbleCollitionDetector: false,
+  enemyCollitionDetector: false,
 }
 
 // Canvas
@@ -21,8 +22,10 @@ export const PLAYER = {
 
 // Enemy
 export const ENEMY = {
-  width: 32,
-  height: 32,
+  leftImage: Utils.buildImage("../assets/Shark.png"),
+  rightImage: Utils.buildImage("../assets/Shark-right.png"),
+  width: 64,
+  height: 64,
   radius: 32
 }
 
