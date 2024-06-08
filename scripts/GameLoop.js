@@ -5,19 +5,22 @@ import * as Constants from "./contants.js";
 export class GameLoop {
   static gameOver = false;
 
-  constructor(player, canvas, gameFrame, score) {
+  constructor(player, canvas, gameFrame, score, background) {
     this.player = player;
     this.canvas = canvas;
     this.gameFrame = gameFrame;
     this.bubblesGenerated = [];
     this.enemiesSpawned = [];
     this.score = score;
+    this.background = background;
   }
 
   initiate = () => {
     // To clear the previously drawn rect
     this.canvas.getContext().clearRect(0, 0, Constants.CANVAS_WIDTH, Constants.CANVAS_HEIGHT);
 
+    this.background.setup();
+    
     this.player.update();
     this.player.draw();
 

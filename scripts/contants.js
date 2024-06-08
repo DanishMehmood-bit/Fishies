@@ -37,6 +37,30 @@ export const BUBBLE = {
   radius: 32
 }
 
+// Background
+export const BACKGROUND = {
+  sea: {
+    image: Utils.buildImage("../assets/sea_background.png"),
+    width: 1920,
+    height: 1080
+  },
+  farground: {
+    image: Utils.buildImage("../assets/farground.png"),
+    width: 1920,
+    height: 1058
+  },
+  midBackground: {
+    image: Utils.buildImage("../assets/mid_background.png"),
+    width: 1920,
+    height: 877
+  },
+  foreground: {
+    image: Utils.buildImage("../assets/foreground.png"),
+    width: 1920,
+    height: 1015
+  }
+}
+
 // Mouse
 export const MOUSE = {
   x: CANVAS_WIDTH/2,
